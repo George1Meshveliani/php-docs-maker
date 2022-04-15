@@ -9,7 +9,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./public:/var/www/html/
+      - ./src:/var/www/html/
 
   db:
     image: mysql
