@@ -12,15 +12,15 @@
 <table>
     <thead>
     <tr>
-        <th>Date</th>
+        <th>Date   </th>
         <th>Check #</th>
-        <th>Description</th>
-        <th>Amount</th>
+        <th>Description </th>
+        <th>Amount </th>
     </tr>
-        <?php getDateData($array); ?>
     </thead>
     <tbody>
     <!-- YOUR CODE -->
+    <?php getData($array); ?>
     </tbody>
     <tfoot>
     <tr>
