@@ -1,14 +1,19 @@
+body {
+    padding: 1%;
+    background-color: black;;
+}
 table {
     width: 100%;
     border-collapse: collapse;
-    text-align: center;
+    text-align: left;
 }
 table tr th, table tr td {
-    padding: 5px;
-    border: 1px #eee solid;
+    color: lightgoldenrodyellow;
+    padding: 6px;
+    border: 2px darkblue solid;
 }
 tfoot tr th, tfoot tr td {
-    font-size: 20px;
+    font-size: 18px;
 }
 tfoot tr th {
     text-align: right;
