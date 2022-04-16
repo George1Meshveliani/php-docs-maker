@@ -17,9 +17,11 @@ if (($open = fopen(FILE_PATH, "r")) !== FALSE) {
 function getData($array_name) {
     foreach ($array_name as $arr) {
         if ($arr[0] != 'Date') {
+            $date = $arr[0];
+            $formated_date =  date('F d, Y', strtotime($date));
             echo "
                   <tr> 
-                    <td> $arr[0] </td> 
+                    <td> $formated_date </td> 
                     <td> $arr[1] </td> 
                     <td> $arr[2] </td> 
                     <td> $arr[3] </td> 
@@ -27,6 +29,10 @@ function getData($array_name) {
                   ";
         }
     }
+    echo "<pre>";
+    var_dump($date);
+    var_dump($formated_date);
+    echo "</pre>";
 }
 
 ?>
