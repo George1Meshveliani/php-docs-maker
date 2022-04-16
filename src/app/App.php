@@ -1,19 +1,24 @@
 <?php
 
-/**
- * @param $file
- */
-function fileToArray($file) {
-    if (($open = fopen($file, "r")) !== FALSE) {
+const FILE_PATH = "./transaction_files/sample_1.csv";
 
-        while (($data = fgetcsv($open, 1000)) !== FALSE) {
-            $array[] = $data;
-        }
+if (($open = fopen(FILE_PATH, "r")) !== FALSE) {
 
-        fclose($open);
+    while (($data = fgetcsv($open, 1000)) !== FALSE) {
+        $array[] = $data;
     }
 
-    echo "<pre>";
-    var_dump($array);
-    echo "</pre>";
+    fclose($open);
 }
+
+function getDateData($array_name) {
+    foreach ($array_name as $arr) {
+        if ($arr[0] != 'Date') {
+            echo "<tr> 
+                    <td> $arr[0] </td> 
+                  </tr>";
+        }
+    }
+}
+
+?>

@@ -1,3 +1,7 @@
+<?php
+    require './app/App.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +33,7 @@
         <th>Description</th>
         <th>Amount</th>
     </tr>
+        <?php getDateData($array); ?>
     </thead>
     <tbody>
     <!-- YOUR CODE -->
