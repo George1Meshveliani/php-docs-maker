@@ -5,7 +5,7 @@ services:
   php:
     build:
       context: ..
-      dockerfile: ../Dockerfile
+      dockerfile: php-salary-project/Dockerfile
     ports:
       - 80:80
     volumes:
