@@ -25,7 +25,10 @@
     <tfoot>
     <tr>
         <th colspan="3">Total Income:</th>
-        <td><!-- YOUR CODE --></td>
+        <td>
+            <!-- YOUR CODE -->
+            <?php getTotalIncome($array); ?>
+        </td>
     </tr>
     <tr>
         <th colspan="3">Total Expense:</th>
