@@ -32,11 +32,17 @@
     </tr>
     <tr>
         <th colspan="3">Total Expense:</th>
-        <td><!-- YOUR CODE --></td>
+        <td>
+            <!-- YOUR CODE -->
+            <?php getTotalExpenses($array) ?>
+        </td>
     </tr>
     <tr>
         <th colspan="3">Net Total:</th>
-        <td><!-- YOUR CODE --></td>
+        <td>
+            <!-- YOUR CODE -->
+            <?php getTotal($array) ?>
+        </td>
     </tr>
     </tfoot>
 </table>
