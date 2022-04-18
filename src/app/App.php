@@ -50,4 +50,15 @@ function getData($array_name) {
     }
 }
 
+function getTotalIncome($array_name) {
+    $result = 0;
+    foreach ($array_name as $arr) {
+        $amount_number = str_replace('$', '', $arr[3]);
+        if ($amount_number > 0) {
+            $result += $amount_number;
+        }
+    }
+    echo $result;
+}
+
 ?>
