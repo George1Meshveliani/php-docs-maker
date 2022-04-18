@@ -64,6 +64,9 @@ function getTotalIncome($array_name) {
     echo $result;
 }
 
+/**
+ * @param $array_name
+ */
 function getTotalExpenses($array_name) {
     $result = 0;
     foreach ($array_name as $arr) {
@@ -73,6 +76,21 @@ function getTotalExpenses($array_name) {
         }
     }
     echo $result;
+}
+
+function getTotal($array_name) {
+    $result1 = 0;
+    $result2 = 0;
+    foreach ($array_name as $arr) {
+        $amount_number = str_replace('$', '', $arr[3]);
+        if ($amount_number < 0) {
+            $result1 -= $amount_number;
+        }
+        if ($amount_number > 0) {
+            $result2 += $amount_number;
+        }
+    }
+    echo $result1 + $result2;
 }
 
 ?>
