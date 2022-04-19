@@ -20,28 +20,34 @@
     </thead>
     <tbody>
     <!-- YOUR CODE -->
-    <?php getData($array); ?>
+    <?php
+        getData($array);
+    ?>
     </tbody>
     <tfoot>
     <tr>
         <th colspan="3">Total Income:</th>
         <td>
             <!-- YOUR CODE -->
-            <?php echo getTotal($array, 'income'); ?>
+            <?php
+                echo getTotal($array, 'income');
+            ?>
         </td>
     </tr>
     <tr>
         <th colspan="3">Total Expense:</th>
         <td>
-            <!-- YOUR CODE -->
-            <?php echo getTotal($array, 'expenses') ?>
+            <?php
+                echo getTotal($array, 'expenses')
+            ?>
         </td>
     </tr>
     <tr>
         <th colspan="3">Net Total:</th>
         <td>
-            <!-- YOUR CODE -->
-            <?php echo getTotal($array, 'net') ?>
+            <?php
+                echo getTotal($array, 'net')
+            ?>
         </td>
     </tr>
     </tfoot>
