@@ -52,45 +52,35 @@ function getData($array_name) {
 
 /**
  * @param $array_name
+ * @param string $result
  */
-function getTotalIncome($array_name) {
-    $result = 0;
-    foreach ($array_name as $arr) {
-        $amount_number = str_replace('$', '', $arr[3]);
-        if ($amount_number > 0) {
-            $result += $amount_number;
+function getTotal($array_name, $result = '') {
+    $sum = 0;
+    if ($result == 'income') {
+        foreach ($array_name as $arr) {
+            $amount_number = str_replace('$', '', $arr[3]);
+            if ($amount_number > 0) {
+                $sum += $amount_number;
+            }
         }
     }
-    echo $result;
-}
 
-/**
- * @param $array_name
- */
-function getTotalExpenses($array_name) {
-    $result = 0;
-    foreach ($array_name as $arr) {
-        $amount_number = str_replace('$', '', $arr[3]);
-        if ($amount_number < 0) {
-            $result -= $amount_number;
+    if ($result == 'expenses') {
+        foreach ($array_name as $arr) {
+            $amount_number = str_replace('$', '', $arr[3]);
+            if ($amount_number < 0) {
+                $sum -= $amount_number;
+            }
         }
     }
-    echo $result;
-}
 
-function getTotal($array_name) {
-    $result1 = 0;
-    $result2 = 0;
-    foreach ($array_name as $arr) {
-        $amount_number = str_replace('$', '', $arr[3]);
-        if ($amount_number < 0) {
-            $result1 -= $amount_number;
-        }
-        if ($amount_number > 0) {
-            $result2 += $amount_number;
+    if ($result == 'net') {
+        foreach ($array_name as $arr) {
+            $amount_number = str_replace('$', '', $arr[3]);
+            $sum += abs($amount_number);
         }
     }
-    echo $result1 + $result2;
+    return $sum;
 }
 
 ?>
