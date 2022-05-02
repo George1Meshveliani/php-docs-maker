@@ -1,19 +1,33 @@
 <?php
 
-namespace App;
+namespace App\Calculations;
 
-class App {
+/**
+ * Class CalculationMethods
+ * @package App\Calculations
+ */
+class CalculationMethods {
 
+    /**
+     * @var array
+     */
     private array $array_name;
+
+    /**
+     * @var string
+     */
     private string $result;
 
+    /**
+     * CalculationMethods constructor.
+     * @param $array_name
+     * @param $result
+     */
     public function __construct($array_name, $result) {
         $this->array_name = $array_name;
         $this->result = $result;
     }
-    /**
-     * @param $array_name
-     */
+
     function getData() {
 
         foreach ($this->array_name as $arr) {
@@ -51,10 +65,6 @@ class App {
         }
     }
 
-    /**
-     * @param $array_name
-     * @param string $result
-     */
     function getTotal() {
         $sum = 0;
         if ($this->result == 'income') {
@@ -85,6 +95,5 @@ class App {
     }
 
 }
-
 
 ?>

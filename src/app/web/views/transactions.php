@@ -1,10 +1,10 @@
 <?php
-use  App as CU;
-require '../app/App.php';
+use  App\Users as User;
+use App\Calculations as Calculations;
 
-const FILE_PATH = "../app/transaction_files/sample_1.csv";
+const FILE_PATH = "../app/web/transaction_files/sample_1.csv";
 
-$id = new CU\CurrentUser(1);
+$id = new User\CurrentUser(1);
 
 if (($open = fopen(FILE_PATH, "r")) !== FALSE) {
 
@@ -15,10 +15,10 @@ if (($open = fopen(FILE_PATH, "r")) !== FALSE) {
     fclose($open);
 }
 
-$calculations = new CU\App($array, '');
-$income = new CU\App($array, 'income');
-$expenses = new CU\App($array, 'expenses');
-$net = new CU\App($array, 'net');
+$calculations = new Calculations\CalculationMethods($array, '');
+$income = new Calculations\CalculationMethods($array, 'income');
+$expenses = new Calculations\CalculationMethods($array, 'expenses');
+$net = new Calculations\CalculationMethods($array, 'net');
 
 ?>
 
