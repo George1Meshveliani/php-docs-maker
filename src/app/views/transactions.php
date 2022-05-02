@@ -1,5 +1,7 @@
 <?php
+use  App as CU;
     require '../app/App.php';
+    $id = new CU\CurrentUser();
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +71,14 @@
         <td>
             <?php
                 echo getTotal($array, 'net')
+            ?>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="3">Current User ID:</th>
+        <td>
+            <?php
+            echo $id->getCurrentUserId();
             ?>
         </td>
     </tr>
