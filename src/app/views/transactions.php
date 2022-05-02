@@ -1,12 +1,34 @@
 <?php
-    require '../../app/App.php';
+    require '../app/App.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Transactions</title>
-    <link rel="stylesheet" href="../../public/styles.css">
+<!--    <link rel="stylesheet" href="./styles.css">-->
+    <style>
+        body {
+            padding: 1%;
+            background-color: black;;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        table tr th, table tr td {
+            color: lightgoldenrodyellow;
+            padding: 6px;
+            border: 2px darkblue solid;
+        }
+        tfoot tr th, tfoot tr td {
+            font-size: 18px;
+        }
+        tfoot tr th {
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
 <table>
