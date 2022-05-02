@@ -1,7 +1,7 @@
 <?php
 use  App as CU;
     require '../app/App.php';
-    $id = new CU\CurrentUser();
+    $id = new CU\CurrentUser(1);
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,15 @@ use  App as CU;
         <th colspan="3">Current User ID:</th>
         <td>
             <?php
-            echo $id->getCurrentUserId();
+            echo $id->getCurrentUser()->id;
+            ?>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="3">Generated unique ID:</th>
+        <td>
+            <?php
+            echo $id->generateUserUniqueID();
             ?>
         </td>
     </tr>
