@@ -1,10 +1,14 @@
 <?php
 
 
-namespace App;
+namespace App\Users;
 
 use Ramsey\Uuid;
 
+/**
+ * Class CurrentUser
+ * @package App\Users
+ */
 class CurrentUser {
 
     public $id;

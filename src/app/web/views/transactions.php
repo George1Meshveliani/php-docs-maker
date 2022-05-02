@@ -1,7 +1,25 @@
 <?php
-use  App as CU;
-    require '../app/App.php';
-    $id = new CU\CurrentUser(1);
+use  App\Users as User;
+use App\Calculations as Calculations;
+
+const FILE_PATH = "../app/web/transaction_files/sample_1.csv";
+
+$id = new User\CurrentUser(1);
+
+if (($open = fopen(FILE_PATH, "r")) !== FALSE) {
+
+    while (($data = fgetcsv($open, 1000)) !== FALSE) {
+        $array[] = $data;
+    }
+
+    fclose($open);
+}
+
+$calculations = new Calculations\CalculationMethods($array, '');
+$income = new Calculations\CalculationMethods($array, 'income');
+$expenses = new Calculations\CalculationMethods($array, 'expenses');
+$net = new Calculations\CalculationMethods($array, 'net');
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +63,7 @@ use  App as CU;
     <tbody>
     <!-- YOUR CODE -->
     <?php
-        getData($array);
+       $calculations->getData();
     ?>
     </tbody>
     <tfoot>
@@ -54,7 +72,7 @@ use  App as CU;
         <td>
             <!-- YOUR CODE -->
             <?php
-                echo getTotal($array, 'income');
+                echo $income->getTotal();
             ?>
         </td>
     </tr>
@@ -62,7 +80,7 @@ use  App as CU;
         <th colspan="3">Total Expense:</th>
         <td>
             <?php
-                echo getTotal($array, 'expenses')
+                echo $expenses->getTotal();
             ?>
         </td>
     </tr>
@@ -70,7 +88,7 @@ use  App as CU;
         <th colspan="3">Net Total:</th>
         <td>
             <?php
-                echo getTotal($array, 'net')
+                echo $net->getTotal();
             ?>
         </td>
     </tr>
