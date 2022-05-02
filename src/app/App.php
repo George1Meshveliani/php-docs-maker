@@ -1,6 +1,6 @@
 <?php
 
-const FILE_PATH = "./transaction_files/sample_1.csv";
+const FILE_PATH = "../app/transaction_files/sample_1.csv";
 
 if (($open = fopen(FILE_PATH, "r")) !== FALSE) {
 
@@ -58,7 +58,7 @@ function getTotal($array_name, $result = '') {
     $sum = 0;
     if ($result == 'income') {
         foreach ($array_name as $arr) {
-            $amount_number = str_replace('$', '', $arr[3]);
+            $amount_number = intval(str_replace('$', '', $arr[3]));
             if ($amount_number > 0) {
                 $sum += $amount_number;
             }
@@ -67,7 +67,7 @@ function getTotal($array_name, $result = '') {
 
     if ($result == 'expenses') {
         foreach ($array_name as $arr) {
-            $amount_number = str_replace('$', '', $arr[3]);
+            $amount_number = intval(str_replace('$', '', $arr[3]));
             if ($amount_number < 0) {
                 $sum -= $amount_number;
             }
@@ -76,7 +76,7 @@ function getTotal($array_name, $result = '') {
 
     if ($result == 'net') {
         foreach ($array_name as $arr) {
-            $amount_number = str_replace('$', '', $arr[3]);
+            $amount_number = intval(str_replace('$', '', $arr[3]));
             $sum += abs($amount_number);
         }
     }
