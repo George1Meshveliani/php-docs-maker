@@ -1,6 +1,6 @@
 <?php
 
-const FILE_PATH = "./transaction_files/sample_1.csv";
+const FILE_PATH = "../transaction_files/sample_1.csv";
 
 if (($open = fopen(FILE_PATH, "r")) !== FALSE) {
 

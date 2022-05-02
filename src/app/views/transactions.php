@@ -1,12 +1,12 @@
 <?php
-    require './app/App.php';
+    require '../../app/App.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Transactions</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../public/styles.css">
 </head>
 <body>
 <table>
